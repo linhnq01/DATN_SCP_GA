@@ -8,6 +8,7 @@ def set_cover(universe, subsets,costs):
         return None
     covered = set()
     cover = []
+    
     while covered != elements:
         subset = max(subsets, key=lambda s: len(s - covered)/costs[subsets.index(s)])
         cover.append(subset)
@@ -24,7 +25,8 @@ def main(a,b,c):
     subsets = [set(x) for x in sub]
     costs =  c 
     cover = set_cover(universe, subsets,costs)
-    print('covering sets= ',cover[0],'\n')
+    print('covering sets= ',cover[0],'\n',
+          'cost= ',cover[1],'$')
      
 m1= 5
 S1 = [[1,3],[2],[1,2,5],[3,5],[4],[5],[1,3],[2,4,5],[1,2],[2,3]]
