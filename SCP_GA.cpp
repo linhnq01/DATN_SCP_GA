@@ -110,8 +110,7 @@ void khoi_tao_du_lieu(BaiToanPhuTap *bai_toan) {
         .tap_goc = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
                     
         };
-	BaiToanPhuTap bai_toan;
-    khoi_tao_du_lieu(&bai_toan);
+	
 
         // Khởi tạo quần thể
         TapHop quan_the[KICH_THUOC_QUAN_THE];
