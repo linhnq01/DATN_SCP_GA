@@ -1,8 +1,9 @@
 import time
 
 
-def set_cover(universe, subsets,costs):
-    cost=0
+def set_cover(universe, subsets, costs):
+    #Khởi tạo
+    cost = 0
     elements = set(e for s in subsets for e in s)
     if elements != universe:
         return None
@@ -10,9 +11,11 @@ def set_cover(universe, subsets,costs):
     cover = []
     
     while covered != elements:
-        subset = max(subsets, key=lambda s: len(s - covered)/costs[subsets.index(s)])
+        # Kiểm tra điều kiện tập con tối ưu nhất
+        subset = max(subsets, key=lambda s : len(s - covered) / costs[subsets.index(s)])
+        # Thêm Si vào tập kết quả
         cover.append(subset)
-        cost+=costs[subsets.index(subset)]
+        cost += costs[subsets.index(subset)]
         covered |= subset
  
     return cover, cost
