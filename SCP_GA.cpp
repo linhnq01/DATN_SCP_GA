@@ -156,7 +156,15 @@ int main() {
             }
         } 
         
-        
+        //Thực hiện lai ghép và đột biến
+        for (int j = 0; j < KICH_THUOC_QUAN_THE; j += 2) {
+            TapHop con1 = lai_ghep(quan_the_moi[j], quan_the_moi[j + 1]);
+            TapHop con2 = lai_ghep(quan_the_moi[j + 1], quan_the_moi[j]);
+            dot_bien(&con1, TY_LE_DOT_BIEN);
+            dot_bien(&con2, TY_LE_DOT_BIEN);
+            quan_the[j] = con1;
+            quan_the[j + 1] = con2;
+        }
     }
     
 	// In tập gốc và các tập con
